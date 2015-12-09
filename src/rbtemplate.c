@@ -440,7 +440,7 @@ VALUE cl_template_to_s(VALUE self)
 
   // Name
   VALUE name = rb_iv_get(self, "@name");
-  rb_str_catf(ret, "%s", StringValuePtr(value)) ;//STR2CSTR(name) );
+  rb_str_catf(ret, "%s", StringValuePtr(name)) ;//STR2CSTR(name) );
 
   // Slots
   VALUE slots = rb_iv_get(self, "@slots");
