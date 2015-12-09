@@ -203,3 +203,9 @@ void Init_rbclips()
   cl_vIds.external_address    = rb_intern("external_address");
   cl_vIds.fact_address        = rb_intern("fact_address");
 }
+
+const char* StringValueHelper(VALUE v)
+{
+	return StringValuePtr(v);
+}
+

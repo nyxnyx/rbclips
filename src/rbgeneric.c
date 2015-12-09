@@ -23,7 +23,7 @@
  * Transfer ruby ID to string representation that is valid in CLIPS.
  * :symbol => SYMBOL, :any => ?VARIABLE 
  */
-const char const * rb_generic_clipstype_str(ID id)
+const char * rb_generic_clipstype_str(ID id)
 {
 # define TRANSFER(source, target) if(id == cl_vIds.source) return target
   TRANSFER(symbol,            "SYMBOL");
@@ -47,7 +47,7 @@ const char const * rb_generic_clipstype_str(ID id)
 /**
  * Convert given variable into string and do conversion if needed
  */
-const char const * rb_generic_slot_value(VALUE value)
+const char * rb_generic_slot_value(VALUE value)
 {
   if(TYPE(value) == T_SYMBOL)
   {
