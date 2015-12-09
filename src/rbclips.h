@@ -86,7 +86,7 @@ extern cl_sIds cl_vIds;
 #define CL_TO_S(v)        rb_funcall( (v), cl_vIds.to_s, 0)
 
 //! Get C string of given VALUE (wrapper)
-#define CL_STR(v)         STR2CSTR( CL_TO_S(v) )
+#define CL_STR(v)         StringValuePtr( CL_TO_S(v) )
 
 //! Get C string of given class of given VALUE (wrapper)
 #define CL_STR_CLASS(v)   CL_STR(rb_obj_class(v))
