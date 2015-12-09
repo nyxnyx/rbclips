@@ -255,7 +255,8 @@ VALUE cl_constraint_to_s(VALUE self)
       VALUE entry = rb_ary_entry(v, i);
       if(TYPE(entry) == T_STRING)
       {
-        rb_str_catf(ret, "\"%s\" ", STR2CSTR( entry ) );
+		VALUE value = rb_inspect(entry);
+        rb_str_catf(ret, "\"%s\" ", StringValuePtr(value)) ; //STR2CSTR( entry ) );
       } else {
         rb_str_catf(ret, "%s ", CL_STR(entry) );
       }

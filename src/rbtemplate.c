@@ -440,7 +440,7 @@ VALUE cl_template_to_s(VALUE self)
 
   // Name
   VALUE name = rb_iv_get(self, "@name");
-  rb_str_catf(ret, "%s", STR2CSTR(name) );
+  rb_str_catf(ret, "%s", StringValuePtr(value)) ;//STR2CSTR(name) );
 
   // Slots
   VALUE slots = rb_iv_get(self, "@slots");
@@ -578,7 +578,7 @@ VALUE cl_template_update(VALUE self)
   cl_sTemplateWrap *wrap = DATA_PTR(self);
   VALUE name = rb_iv_get(self, "@name");
 
-  wrap->ptr = FindDeftemplate( STR2CSTR(name) );
+  wrap->ptr = FindDeftemplate( StringValuePtr(name)) ;//STR2CSTR(name) );
 
   // The deftemplate don't have to be saved
   if( !wrap->ptr ) return Qfalse;

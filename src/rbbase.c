@@ -49,7 +49,8 @@ VALUE cl_base_insert_command(VALUE self, VALUE cmd)
   // Executing command
   if( ! ExecuteIfCommandComplete(env) || cl_router_werror())
   {
-    char *msg = STR2CSTR(cl_router_get_content_d());
+ 	VALUE value = rb_inspect(cl_router_get_content_d()); 
+    char *msg = StringValuePtr(value); //STR2CSTR(cl_router_get_content_d());
 
     if(strlen(msg) == 0)
     {
